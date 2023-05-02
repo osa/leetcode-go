@@ -34,6 +34,10 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 */
 package p0001
 
+/*
+space : O(n)
+time: O(nlogn)
+*/
 func twoSum(nums []int, target int) []int {
 	var items map[int]int = make(map[int]int)
 
