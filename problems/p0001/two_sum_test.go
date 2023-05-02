@@ -2,6 +2,8 @@ package p0001
 
 import (
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 // Equal tells whether a and b contain the same elements.
@@ -23,10 +25,7 @@ func TestTwoSum_Empty(t *testing.T) {
 	var actual []int = twoSum([]int{}, 10)
 
 	// asserts
-	if !Equal(actual, nil) {
-		t.Errorf("Expected empty slice")
-		t.Fatal()
-	}
+	assert.True(t, Equal(actual, nil), "Expected empty slice")
 }
 
 func TestTwoSum_ResultDoesNotExist(t *testing.T) {
@@ -34,10 +33,7 @@ func TestTwoSum_ResultDoesNotExist(t *testing.T) {
 	var actual []int = twoSum([]int{1, 2}, 1)
 
 	// asserts
-	if !Equal(actual, nil) {
-		t.Errorf("Expected empty slice")
-		t.Fatal()
-	}
+	assert.True(t, Equal(actual, nil), "Expected empty slice")
 }
 
 func TestTwoSum_FindsResult(t *testing.T) {
@@ -45,8 +41,5 @@ func TestTwoSum_FindsResult(t *testing.T) {
 	var actual []int = twoSum([]int{2, 7, 11, 15}, 9)
 
 	// asserts
-	if !Equal(actual, []int{0, 1}) {
-		t.Errorf("Expected []int{0, 1}")
-		t.Fatal()
-	}
+	assert.True(t, Equal(actual, []int{0, 1}), "Expected []int{0, 1}")
 }
