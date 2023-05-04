@@ -7,3 +7,4 @@
 - Run `go get github.com/stretchr/testify/assert`
 - Create go file. Ex: hello_test.go
 - Run tests either `go test hello_test.go` or `go test .` (Prereq: Run `go work use .` )
+
