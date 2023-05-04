@@ -38,7 +38,24 @@ space : O(n)
 time: O(n)
 */
 func isValid(s string) bool {
-	//todo: finish
+	var stack []rune = []rune{}
+	var matches map[rune]rune = map[rune]rune{
+		'(': ')',
+		'{': '}',
+		'[': ']',
+	}
 
-	return false
+	for _, r := range s {
+		_, exists := matches[r]
+
+		if exists {
+			stack = append(stack, r)
+		} else if len(stack) == 0 || matches[stack[len(stack)-1]] != r {
+			return false
+		} else {
+			stack = stack[:len(stack)-1] //pop
+		}
+	}
+
+	return len(stack) == 0
 }
